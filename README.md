@@ -5,7 +5,7 @@
 
 ## 📘 Project Overview
 
-`so_long` is a simple 2D game project developed in C using the **MiniLibX** graphics library. The goal is to build a basic graphical game where the player navigates through a map, collects all items, and reaches the exit — all while following strict constraints on asset handling and map design.
+`MazeRunner game` is a simple 2D game project developed in C using the **MiniLibX** graphics library. The goal is to build a basic graphical game where the player navigates through a map, collects all items, and reaches the exit — all while following strict constraints on asset handling and map design.
 
 ## 🏁 Objective
 
