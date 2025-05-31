@@ -1,62 +1,66 @@
-# so_long
-
-[![42 École](https://img.shields.io/badge/42-École-000000?style=flat&logo=42&logoColor=white)](https://42.fr)
-
-**so_long** is a 2D game project developed as part of the 42 École curriculum. This project combines game mechanics, graphics programming, and event handling to create an interactive and visually appealing game.
-
----
-
-## Table of Contents
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Installation](#installation)
+# 🎮 MazeRunner Game
 
 
----
+![Text Alt](mazerunner_game/xpm_files/mazerunner.jpg)
 
-## About the Project
+## 📘 Project Overview
 
-The **so_long** project involves creating a small 2D game where the player navigates a character through a map, collecting items and reaching an exit while avoiding obstacles. The game uses the **MiniLibX** library for rendering graphics and handling events.
+`so_long` is a simple 2D game project developed in C using the **MiniLibX** graphics library. The goal is to build a basic graphical game where the player navigates through a map, collects all items, and reaches the exit — all while following strict constraints on asset handling and map design.
 
-This project enhances skills in:
-- Graphics rendering and window management.
-- Game mechanics like player movement, collision detection, and map parsing.
-- Handling user inputs and keyboard events.
+## 🏁 Objective
 
----
+- Load and render a 2D map from a `.ber` file
+- Allow player movement using keyboard input
+- Collect all collectibles before reaching the exit
+- Validate the map: closed walls, valid paths, proper element counts
+- Handle game exit events (e.g., window close)
 
-## Features
+## 📚 Key Concepts
 
-- **2D Rendering:** Uses the MiniLibX library to render game graphics.
-- **Keyboard Input:** Supports WASD keys for movement.
-- **Collectibles and Exit:** The player must collect all items to unlock the exit.
-- **Dynamic Map Parsing:** Reads maps from `.ber` files and validates them.
-- **Simple Game Logic:** Implements game over and success states.
+- 2D graphics rendering with **MiniLibX**
+- Keyboard event handling in C
+- Map parsing and validation
+- Pathfinding (e.g., flood fill for reachability)
+- Memory management and leak prevention
+- Game loop logic and sprite handling
 
----
+## 🛠️ Technologies
 
-## Getting Started
+- Language: C
+- Graphics: MiniLibX (42's custom lightweight graphics library)
+- Compilation: Makefile
+- Tools: Valgrind, custom map testers
 
-### Prerequisites
-- A Unix-based operating system (Linux or macOS recommended).
-- GCC or another compatible C compiler.
-- Make utility.
-- The MiniLibX library.
+ # Flood Fill Algorithm
+  fills all connected cells of the same color starting from a given point, like the paint bucket tool. It replaces the target color with a new one using DFS or BFS.
+## 🗺️ Map Example
 
----
+```plaintext
+11111
+1P0C1
+10001
+1E001
+11111
 
-## Installation
+    1 – Wall
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/hassan-kheireddin/so_long.git
-   ```
-2. Enter the folder:
-   ```bash
-   cd so_long
-   ```
-3. compile:
-   ```bash
-   make
-   ```
+    0 – Empty space
+
+    P – Player start
+
+    C – Collectible
+
+    E – Exit
+
+🧠 Game Mechanics
+
+    The player can move up, down, left, or right.
+
+    Each move is counted and displayed.
+
+    The game ends when all collectibles are gathered and the player reaches the exit.
+
+    The map must be rectangular, enclosed by walls, and have at least one player, one exit, and one collectible.
+
+```
+To ensure the map is valid, the project often uses a flood fill algorithm to simulate whether the player can reach all collectibles and the exit from the starting position. This ensures playability and enforces map integrity
